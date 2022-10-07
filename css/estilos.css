@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* sirve para poner en mayuscula la primera letra */
+    text-transform: capitalize; 
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    /* background-image: url(https://www.rdstation.com/blog/wp-content/uploads/sites/2/2017/09/thestocks.jpg); */
+    background-size: cover;
+    background-position: center;
+}
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px black;
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .logo{
+    font-weight: bolder;
+    font-size: 25px;
+    color: black;
+}
+
+/* creando el menu */
+header .menu ul{
+    list-style: none;
+}
+header .menu ul li{
+    position: relative;
+    float: left ;
+}
+header .menu ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    display: block;
+    transition: all 1s;
+}
+header .menu ul li a:hover{
+    background-color: black;
+    color: #fff;
+    font-size: 22px;
+}
+/* escondiendo menu */
+header .menu ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+    display: none;
+}
+header .menu ul li ul li{
+    width: 100%;
+    border: 1px solid black;
+}
+header .menu ul li:focus-within > ul,
+header .menu ul li:hover > ul{
+    display: initial;
+}
+
+/* escondiendo a los iconos */
+#menu{
+    display: none;
+}
+header label{
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* para celulares */
+@media (max-width:991px){
+    header{
+        padding: 20px;
+        
+    }
+    header label{
+        display: initial;
+        transition: all 1s;
+    }
+    header .menu{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background-color: #fff;
+        border-top: 1px solid black;
+        transition:  0.8s;
+        display: none;
+        
+    }
+    header .menu ul li{
+        width: 100%;
+
+    }
+    header .menu ul li ul{
+        position: relative;
+        width: 100%;
+        
+    }
+    header .menu ul li ul li{
+        background-color: antiquewhite;
+        
+    } 
+    header .menu ul li ul li ul{
+        width: 100%;
+        left: 0;
+        
+    }
+    #menu:checked ~ .menu{
+        
+        display: initial;
+    }
+    
+}
+
+
